@@ -6,8 +6,11 @@
 //  Copyright (c) 2013年 Yutaka Komagata. All rights reserved.
 //
 
-#import "SeachCheckViewController.h"
+
+
 #import <QuartzCore/QuartzCore.h>
+#import "SeachCheckViewController.h"
+#import "SearchViewController.h"
 
 
 @interface SeachCheckViewController ()
@@ -16,7 +19,7 @@
 
 @implementation SeachCheckViewController
 
-@synthesize userDict;
+@synthesize userDict = _userDict;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +31,8 @@
 }
 
 //テキストフィールドの生成
-- (UITextField*)makeTextField:(CGRect)rect text:(NSString*)text {
+- (UITextField *)makeTextField:(CGRect)rect text:(NSString*)text
+{
     UITextField *textField=[[UITextField alloc] init];
     [textField setFrame:rect];
     [textField setText:text];
@@ -51,11 +55,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    //色を黄色で表示
-    //self.view.backgroundColor = [UIColor yellowColor];
+    //最初のudを消しておく処理
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud removeObjectForKey:@"checkInUser"];
     
+    
+    //テキストフィールドの生成
     _textField = [self makeTextField:CGRectMake(400, 350, 275,44)text:@""];
     [_textField setDelegate:self];
     [self.view addSubview:_textField];
@@ -123,20 +129,36 @@
     hedderimage.frame = CGRectMake(0, 0, 768, 44);
     [self.view addSubview:hedderimage];
     
-    /*
-    UIView *vw = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
-    vw.backgroundColor = RGB(255, 51, 51);
-    //vw.backgroundColor = [UIColor colorWithRed:255 green:51 blue:51 alpha:1.0];
-    [self.view addSubview:vw];
-     */
 }
 
--(BOOL)textFieldShouldReturn:(UITextField*)textField{
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+    if (_userDict == nil) {
+        NSLog(@"名前はまだない");
+    
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        NSDictionary *userName = [[NSDictionary alloc] init];
+        
+        userName = [ud objectForKey:@"checkInUser"];
+        
+        //テキストフィールドにチェックインするユーザー名を格納
+        _textField.text = [userName objectForKey:@"name"];
+        
+        }
+}
+
+   ;
+- (BOOL)textFieldShouldReturn:(UITextField*)textField
+{
     [_textField resignFirstResponder];
     return YES;
 }
 
-
+    
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -185,8 +207,7 @@
 }
 
 //アラートビューの表示
-- (void)showAlert
-{
+- (void)showAlert {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"領収書"
                                                     message:@"あなたのアドレスにお送りしました"
                                                    delegate:self

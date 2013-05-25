@@ -16,7 +16,7 @@
 
 @implementation SearchViewController
 
-@synthesize textField;
+@synthesize textField = _searchId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,7 +36,7 @@
     //画面の色は灰色です
     self.view.backgroundColor = [UIColor grayColor];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(84, 112, 600, 800) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(84, 112, 600, 790) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     
@@ -44,7 +44,7 @@
     
     
     //AFNetworking
-    NSString *urlString = [NSString stringWithFormat:@"http://133.242.129.55/work/egco.php?id=%@", textField];
+    NSString *urlString = [NSString stringWithFormat:@"http://133.242.129.55/work/egco.php?id=%@", _searchId];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0f];
@@ -63,20 +63,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];
     [operation start];
-
-    
-    
-    //NSLog(@"%@",textField);
-    
-    //暫定的なボタンの設置
-    UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    closeBtn.frame = CGRectMake(84, 500, 600, 44);
-    //closeBtn.center = CGPointMake(self.view.frame.size.width / 3 , self.view.frame.size.height / 5);
-    
-    [closeBtn setTitle:@"暫定的に置いてるボタンです" forState:UIControlStateNormal];
-    [closeBtn addTarget:self action:@selector(searchCloseBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:closeBtn];
-    
 }
 
 
@@ -86,55 +72,55 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) searchCloseBtnAction:(UIButton *)sender
-{
-    //モーダル非表示
-    //ビューを閉じるために dismissViewControllerAnimated を呼んでいる
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-//テーブルビューに必要な３つのメソッド：１つ目
+//テーブルビューに必要な３つのメソッド：テーブルに表示するsectionの数を決定する処理
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
-//テーブルビューに必要な３つのメソッド：２つ目
+//テーブルビューに必要な３つのメソッド：Sectionに表示するRowの数を決定する処理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    NSLog(@"hoge");
-    
     return _userArray.count;
 }
 
-//テーブルビューに必要な３つのメソッド：３つ目
+//テーブルビューに必要な３つのメソッド：セルに表示するデータをセットする処理
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
+    
+    }
+    
     NSDictionary *dict = _userArray[indexPath.row];
     cell.textLabel.text = dict[@"name"];
-    
-    // Configure the cell...
+
     NSLog(@"%@",dict);
     return cell;
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *array = self.navigationController.viewControllers;
     int arrayCount = [array count];
-    SeachCheckViewController *parent = [array objectAtIndex:arrayCount - 2];
+    SeachCheckViewController *scv = [array objectAtIndex:arrayCount - 2];
+    
     _userDict = _userArray[indexPath.row];
-    parent.userDict = _userDict;
-    [self.navigationController popViewControllerAnimated:YES];
+    scv.userDict = _userDict;
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:_userDict forKey:@"checkInUser"];
+    
+    NSLog(@"%@", _userDict);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

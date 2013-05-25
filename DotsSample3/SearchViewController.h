@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface SearchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate>
 {
+    NSString *_searchId;
     NSArray *_userArray;
     NSDictionary *_userDict;
 }
