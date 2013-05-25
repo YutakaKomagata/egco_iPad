@@ -10,10 +10,6 @@
 		2900CEA6173E0DB200622ACC /* thanks.png in Resources */ = {isa = PBXBuildFile; fileRef = 2900CEA5173E0DB200622ACC /* thanks.png */; };
 		2900CEA9173E0DD100622ACC /* egco_hedder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2900CEA7173E0DD100622ACC /* egco_hedder.png */; };
 		2900CEAA173E0DD100622ACC /* egco_logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2900CEA8173E0DD100622ACC /* egco_logo_2.png */; };
-		29293B84172BABE6006BBFEA /* SeachCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29293B7F172BABE5006BBFEA /* SeachCheckViewController.m */; };
-		29293B85172BABE6006BBFEA /* SeachCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29293B80172BABE5006BBFEA /* SeachCheckViewController.xib */; };
-		29293B86172BABE6006BBFEA /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29293B82172BABE6006BBFEA /* SearchViewController.m */; };
-		29293B87172BABE6006BBFEA /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29293B83172BABE6006BBFEA /* SearchViewController.xib */; };
 		294B7B54174237D900E9F2DA /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B7B42174237D900E9F2DA /* AFHTTPClient.m */; };
 		294B7B55174237D900E9F2DA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B7B44174237D900E9F2DA /* AFHTTPRequestOperation.m */; };
 		294B7B56174237D900E9F2DA /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B7B46174237D900E9F2DA /* AFImageRequestOperation.m */; };
@@ -23,6 +19,10 @@
 		294B7B5A174237D900E9F2DA /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B7B4F174237D900E9F2DA /* AFURLConnectionOperation.m */; };
 		294B7B5B174237D900E9F2DA /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B7B51174237D900E9F2DA /* AFXMLRequestOperation.m */; };
 		294B7B5C174237D900E9F2DA /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B7B53174237D900E9F2DA /* UIImageView+AFNetworking.m */; };
+		70060D2917506E8A00F8BBC7 /* SeachCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70060D2417506E8A00F8BBC7 /* SeachCheckViewController.m */; };
+		70060D2A17506E8A00F8BBC7 /* SeachCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70060D2517506E8A00F8BBC7 /* SeachCheckViewController.xib */; };
+		70060D2B17506E8A00F8BBC7 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70060D2717506E8A00F8BBC7 /* SearchViewController.m */; };
+		70060D2C17506E8A00F8BBC7 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70060D2817506E8A00F8BBC7 /* SearchViewController.xib */; };
 		7029D29F165BAEAA0085DD10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7029D29E165BAEAA0085DD10 /* UIKit.framework */; };
 		7029D2A1165BAEAA0085DD10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7029D2A0165BAEAA0085DD10 /* Foundation.framework */; };
 		7029D2A3165BAEAA0085DD10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7029D2A2165BAEAA0085DD10 /* CoreGraphics.framework */; };
@@ -47,12 +47,6 @@
 		2900CEA5173E0DB200622ACC /* thanks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thanks.png; sourceTree = "<group>"; };
 		2900CEA7173E0DD100622ACC /* egco_hedder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egco_hedder.png; sourceTree = "<group>"; };
 		2900CEA8173E0DD100622ACC /* egco_logo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egco_logo_2.png; sourceTree = "<group>"; };
-		29293B7E172BABE5006BBFEA /* SeachCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeachCheckViewController.h; path = ../../Egco_sample/Egco_sample/SeachCheckViewController.h; sourceTree = "<group>"; };
-		29293B7F172BABE5006BBFEA /* SeachCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeachCheckViewController.m; path = ../../Egco_sample/Egco_sample/SeachCheckViewController.m; sourceTree = "<group>"; };
-		29293B80172BABE5006BBFEA /* SeachCheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SeachCheckViewController.xib; path = ../../Egco_sample/Egco_sample/SeachCheckViewController.xib; sourceTree = "<group>"; };
-		29293B81172BABE6006BBFEA /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../../Egco_sample/Egco_sample/SearchViewController.h; sourceTree = "<group>"; };
-		29293B82172BABE6006BBFEA /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../../Egco_sample/Egco_sample/SearchViewController.m; sourceTree = "<group>"; };
-		29293B83172BABE6006BBFEA /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchViewController.xib; path = ../../Egco_sample/Egco_sample/SearchViewController.xib; sourceTree = "<group>"; };
 		294B7B41174237D900E9F2DA /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		294B7B42174237D900E9F2DA /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		294B7B43174237D900E9F2DA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -72,6 +66,12 @@
 		294B7B51174237D900E9F2DA /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		294B7B52174237D900E9F2DA /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		294B7B53174237D900E9F2DA /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		70060D2317506E8A00F8BBC7 /* SeachCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachCheckViewController.h; sourceTree = "<group>"; };
+		70060D2417506E8A00F8BBC7 /* SeachCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeachCheckViewController.m; sourceTree = "<group>"; };
+		70060D2517506E8A00F8BBC7 /* SeachCheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeachCheckViewController.xib; sourceTree = "<group>"; };
+		70060D2617506E8A00F8BBC7 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		70060D2717506E8A00F8BBC7 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		70060D2817506E8A00F8BBC7 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		7029D29A165BAEAA0085DD10 /* DotsSample3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotsSample3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7029D29E165BAEAA0085DD10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7029D2A0165BAEAA0085DD10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,17 +169,17 @@
 		7029D2A4165BAEAA0085DD10 /* DotsSample3 */ = {
 			isa = PBXGroup;
 			children = (
+				70060D2317506E8A00F8BBC7 /* SeachCheckViewController.h */,
+				70060D2417506E8A00F8BBC7 /* SeachCheckViewController.m */,
+				70060D2517506E8A00F8BBC7 /* SeachCheckViewController.xib */,
+				70060D2617506E8A00F8BBC7 /* SearchViewController.h */,
+				70060D2717506E8A00F8BBC7 /* SearchViewController.m */,
+				70060D2817506E8A00F8BBC7 /* SearchViewController.xib */,
 				7029D2AD165BAEAA0085DD10 /* AppDelegate.h */,
 				7029D2AE165BAEAA0085DD10 /* AppDelegate.m */,
 				7029D2EF165BF2EF0085DD10 /* HomeViewController.h */,
 				7029D2F0165BF2EF0085DD10 /* HomeViewController.m */,
 				7029D2F1165BF2EF0085DD10 /* HomeViewController.xib */,
-				29293B7E172BABE5006BBFEA /* SeachCheckViewController.h */,
-				29293B7F172BABE5006BBFEA /* SeachCheckViewController.m */,
-				29293B80172BABE5006BBFEA /* SeachCheckViewController.xib */,
-				29293B81172BABE6006BBFEA /* SearchViewController.h */,
-				29293B82172BABE6006BBFEA /* SearchViewController.m */,
-				29293B83172BABE6006BBFEA /* SearchViewController.xib */,
 				294B7B40174237D900E9F2DA /* AFNetworking */,
 				7029D302165BF3C40085DD10 /* Sound */,
 				7029D301165BF3AE0085DD10 /* Image */,
@@ -287,11 +287,11 @@
 				7029D30A165BF4B20085DD10 /* himo0.png in Resources */,
 				7029D30B165BF4B20085DD10 /* himo1.png in Resources */,
 				70F00D60166FB34700B7B7B6 /* longhimo.png in Resources */,
-				29293B85172BABE6006BBFEA /* SeachCheckViewController.xib in Resources */,
-				29293B87172BABE6006BBFEA /* SearchViewController.xib in Resources */,
 				2900CEA6173E0DB200622ACC /* thanks.png in Resources */,
 				2900CEA9173E0DD100622ACC /* egco_hedder.png in Resources */,
 				2900CEAA173E0DD100622ACC /* egco_logo_2.png in Resources */,
+				70060D2A17506E8A00F8BBC7 /* SeachCheckViewController.xib in Resources */,
+				70060D2C17506E8A00F8BBC7 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +305,6 @@
 				7029D2AB165BAEAA0085DD10 /* main.m in Sources */,
 				7029D2AF165BAEAA0085DD10 /* AppDelegate.m in Sources */,
 				7029D2F6165BF2EF0085DD10 /* HomeViewController.m in Sources */,
-				29293B84172BABE6006BBFEA /* SeachCheckViewController.m in Sources */,
-				29293B86172BABE6006BBFEA /* SearchViewController.m in Sources */,
 				294B7B54174237D900E9F2DA /* AFHTTPClient.m in Sources */,
 				294B7B55174237D900E9F2DA /* AFHTTPRequestOperation.m in Sources */,
 				294B7B56174237D900E9F2DA /* AFImageRequestOperation.m in Sources */,
@@ -316,6 +314,8 @@
 				294B7B5A174237D900E9F2DA /* AFURLConnectionOperation.m in Sources */,
 				294B7B5B174237D900E9F2DA /* AFXMLRequestOperation.m in Sources */,
 				294B7B5C174237D900E9F2DA /* UIImageView+AFNetworking.m in Sources */,
+				70060D2917506E8A00F8BBC7 /* SeachCheckViewController.m in Sources */,
+				70060D2B17506E8A00F8BBC7 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
